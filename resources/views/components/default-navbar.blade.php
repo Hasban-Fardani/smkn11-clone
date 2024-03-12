@@ -39,12 +39,52 @@
         <!-- Toggle menu -->
         <div x-ref="tab" :style="handleToggle()"
             class="relative w-full overflow-hidden transition-all duration-700 lg:hidden max-h-0">
-            <div class="flex flex-col my-3 space-y-2 text-lg hover:font-b text-gray-600">
-                <a href="#" class="hover:text-gray-900"><span>Link</span></a>
+            <!-- Dropdown menu -->
+            <!-- TODO: dropdown content -->
+            <div class="flex flex-col my-3 space-y-2 text-lg hover:font-b text-gray-600 z-50">
+                <x-link href="/" class="hover:text-gray-900"><span class="uppercase">beranda</span></x-link>
                 <hr>
-                <a href="#" class="hover:text-gray-900"><span>Link</span></a>
+                <x-dropdown position="bottom-start">
+                    <x-slot:action>
+                        <x-button x-on:click="show = !show" sm >Open</x-button>
+                    </x-slot:action>
+                    <x-dropdown.items text="Settings" />
+                    <x-dropdown.items text="Logout" separator />
+                </x-dropdown>
                 <hr>
-                <a href="#" class="hover:text-gray-900"><span>Link</span></a>
+                <x-dropdown position="bottom-start">
+                    <x-slot:action>
+                        <x-button x-on:click="show = !show" sm >Open</x-button>
+                    </x-slot:action>
+                    <x-dropdown.items text="Settings" />
+                    <x-dropdown.items text="Logout" separator />
+                </x-dropdown>
+                <hr>
+                <x-dropdown position="bottom-start">
+                    <x-slot:action>
+                        <x-button x-on:click="show = !show" sm >Open</x-button>
+                    </x-slot:action>
+                    <x-dropdown.items text="Settings" />
+                    <x-dropdown.items text="Logout" separator />
+                </x-dropdown>
+                <hr>
+                <x-dropdown position="bottom-start">
+                    <x-slot:action>
+                        <x-button x-on:click="show = !show" sm >Open</x-button>
+                    </x-slot:action>
+                    <x-dropdown.items text="Settings" />
+                    <x-dropdown.items text="Logout" separator />
+                </x-dropdown>
+                <hr>
+                <x-dropdown position="bottom-start">
+                    <x-slot:action>
+                        <x-button x-on:click="show = !show" sm >Open</x-button>
+                    </x-slot:action>
+                    <x-dropdown.items text="Settings" />
+                    <x-dropdown.items text="Logout" separator />
+                </x-dropdown>
+                <hr>
+                <x-link href="/" class="hover:text-gray-900"><span class="uppercase">Kontak</span></x-link>
             </div>
         </div>
         <!-- End toggle menu -->
