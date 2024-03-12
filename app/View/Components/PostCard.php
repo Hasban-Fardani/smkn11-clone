@@ -16,7 +16,8 @@ class PostCard extends Component
         public string $url,
         public string $description,
         public string $image,
-        public string $category
+        public string $category,
+        public string $class = 'w-80 h-80'
     )
     {
         //
@@ -33,7 +34,8 @@ class PostCard extends Component
                 'url' => $this->url,
                 'description' => $this->description,
                 'image' => $this->image,
-                'category' => $this->category
+                'category' => $this->category,
+                'class' => $this->class
             ]
         );
     }

@@ -1,4 +1,5 @@
-<nav x-data="accordion(6)" class="bg-white text-black flex flex-wrap items-center justify-center w-full tracking-wide relative z-50">
+<nav x-data="accordion(6)"
+    class="bg-white text-black flex flex-wrap items-center justify-center w-full tracking-wide relative z-50">
     <div class="flex flex-wrap items-center justify-between w-full py-4 pb-6 px-4 md:px-8 lg:px-14">
         <!-- Left nav -->
         <div class="flex items-center">
@@ -38,51 +39,58 @@
 
         <!-- Toggle menu -->
         <div x-ref="tab" :style="handleToggle()"
-            class="relative w-full overflow-hidden transition-all duration-700 lg:hidden max-h-0">
+            class="relative w-full h-auto overflow-y-scroll transition-all duration-700 lg:hidden max-h-0">
             <!-- Dropdown menu -->
             <!-- TODO: dropdown content -->
             <div class="flex flex-col my-3 space-y-2 text-lg hover:font-b text-gray-600 z-50">
                 <x-link href="/" class="hover:text-gray-900"><span class="uppercase">beranda</span></x-link>
                 <hr>
-                <x-dropdown position="bottom-start">
-                    <x-slot:action>
-                        <x-button x-on:click="show = !show" sm >Open</x-button>
-                    </x-slot:action>
-                    <x-dropdown.items text="Settings" />
-                    <x-dropdown.items text="Logout" separator />
-                </x-dropdown>
+                <details class="d-dropdown">
+                    <summary class="m-1 uppercase">profile</summary>
+                    <ul class="p-2 d-menu dropdown-content z-[1] bg-base-100 w-full uppercase">
+                        <li><a>Tentang</a></li>
+                        <li><a>struktur organisasi</a></li>
+                        <li><a>guru dan tenaga kependidikan</a></li>
+                        <li><a>sarana dan prasarana</a></li>
+                    </ul>
+                </details>
                 <hr>
-                <x-dropdown position="bottom-start">
-                    <x-slot:action>
-                        <x-button x-on:click="show = !show" sm >Open</x-button>
-                    </x-slot:action>
-                    <x-dropdown.items text="Settings" />
-                    <x-dropdown.items text="Logout" separator />
-                </x-dropdown>
+                <details class="d-dropdown">
+                    <summary class="m-1 uppercase">dunia industri</summary>
+                    <ul class="p-2 d-menu dropdown-content z-[1] bg-base-100 w-full uppercase">
+                        <li><a>industri kerjasama</a></li>
+                        <li><a>bursa kerja</a></li>
+                    </ul>
+                </details>
                 <hr>
-                <x-dropdown position="bottom-start">
-                    <x-slot:action>
-                        <x-button x-on:click="show = !show" sm >Open</x-button>
-                    </x-slot:action>
-                    <x-dropdown.items text="Settings" />
-                    <x-dropdown.items text="Logout" separator />
-                </x-dropdown>
+                <details class="d-dropdown">
+                    <summary class="m-1 uppercase">pojok siswa</summary>
+                    <ul class="p-2 d-menu dropdown-content z-[1] bg-base-100 w-full uppercase">
+                        <li><a>ekstrakulikuler</a></li>
+                        <li><a>penghargaan</a></li>
+                    </ul>
+                </details>
                 <hr>
-                <x-dropdown position="bottom-start">
-                    <x-slot:action>
-                        <x-button x-on:click="show = !show" sm >Open</x-button>
-                    </x-slot:action>
-                    <x-dropdown.items text="Settings" />
-                    <x-dropdown.items text="Logout" separator />
-                </x-dropdown>
+                <details class="d-dropdown">
+                    <summary class="m-1 uppercase">program keahlian</summary>
+                    <ul class="p-2 d-menu dropdown-content z-[1] bg-base-100 w-full uppercase">
+                        <li><a>akuntansi dan keuangan lembaga</a></li>
+                        <li><a>manajemen perkantoran dan layanan bisnis</a></li>
+                        <li><a>pemasaran</a></li>
+                        <li><a>pengembangan perangkat lunak dan gim</a></li>
+                        <li><a>desain komunikasi visual</a></li>
+                        <li><a>teknik jaringan komputer dan telekomunikasi</a></li>
+                    </ul>
+                </details>
                 <hr>
-                <x-dropdown position="bottom-start">
-                    <x-slot:action>
-                        <x-button x-on:click="show = !show" sm >Open</x-button>
-                    </x-slot:action>
-                    <x-dropdown.items text="Settings" />
-                    <x-dropdown.items text="Logout" separator />
-                </x-dropdown>
+                <details class="d-dropdown">
+                    <summary class="m-1 uppercase">program unggulan</summary>
+                    <ul class="p-2 d-menu dropdown-content z-[1] bg-base-100 w-full uppercase">
+                        <li><a>sekolah pusat unggulan</a></li>
+                        <li><a>badan layanan usaha daerah</a></li>
+                        <li><a>sekolah pencetak wirausaha</a></li>
+                    </ul>
+                </details>
                 <hr>
                 <x-link href="/" class="hover:text-gray-900"><span class="uppercase">Kontak</span></x-link>
             </div>
@@ -153,12 +161,16 @@
                     x-transition:leave-start="opacity-100 transform scale-100"
                     x-transition:leave-end="opacity-0 transform scale-90"
                     class="absolute left-1/2 transform -translate-x-1/2 py-1 text-gray-900 bg-white shadow-xl min-w-max border-t-4 border-t-yellow-500">
-                    <a href="{{ route('profile') }}" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">TENTANG</a>
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">STRUKTUR
+                    <a href="{{ route('tentang') }}"
+                        class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">TENTANG</a>
+                    <a href="{{ route('struktur-organisasi') }}"
+                        class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">STRUKTUR
                         ORGANISASI</a>
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">GURU DAN
+                    <a href="{{ route('guru-dan-tenaga-kependidikan') }}"
+                        class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">GURU DAN
                         TENAGA KEPENDIDIKAN</a>
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100">SARANA DAN
+                    <a href="{{ route('sarana-dan-prasarana') }}"
+                        class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100">SARANA DAN
                         PRASARANA</a>
                 </div>
                 <!-- End Dropdown Menu -->
@@ -307,7 +319,7 @@
             </div>
             <!-- End Dropdown PROGRAM KEAHLIAN -->
 
-            <x-button href="/"
+            <x-button href="{{ route('kontak') }}"
                 class="font-semibold text-white bg-transparent hover:bg-transparent">KONTAK</x-button>
         </div>
     </div>

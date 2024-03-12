@@ -19,6 +19,7 @@ module.exports = {
         './resources/**/*.js',
         './resources/**/*.ts',
         './resources/**/*.php',
+        './resources/**/**/*.php',
         './vendor/tallstackui/tallstackui/src/**/*.php',
     ],
     plugins: [
@@ -29,4 +30,7 @@ module.exports = {
     presets: [
         require('./vendor/tallstackui/tallstackui/tailwind.config.js') 
     ],
+    daisyui: {
+        prefix: "d-",
+    }
 }

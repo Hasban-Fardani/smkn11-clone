@@ -17,9 +17,11 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('content');
+            $table->string('description');
             $table->enum('status', ['published', 'request for publish', 'draft'])->default('draft');
             $table->boolean('is_accepted')->default(false);
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

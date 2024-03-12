@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Livewire\Auth\Login;
@@ -8,7 +9,13 @@ use App\Livewire\Auth\Passwords\Email;
 use App\Livewire\Auth\Passwords\Reset;
 use App\Livewire\Auth\Register;
 use App\Livewire\Auth\Verify;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Creator\DashboardController as CreatorDashboardController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\CMS\CategoryController;
+use App\Http\Controllers\CMS\PostController as EditorPostController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +28,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'index')->name('home');
-Route::view('/profile', 'profile')->name('profile');
+Route::view(
+    '/',
+    'index',
+    [
+        'posts' => Post::with('category')->latest()->get()->take(6)
+    ]
+)->name('home');
 
+Route::view('/tentang', 'about')->name('tentang');
+Route::view('/struktur-organisasi', 'struktur-organisasi')->name('struktur-organisasi');
+Route::view('/guru-dan-tenaga-kependidikan', 'guru-dan-tenaga-kependidikan')->name('guru-dan-tenaga-kependidikan');
+Route::view('/sarana-dan-prasarana', 'sarana-dan-prasarana')->name('sarana-dan-prasarana');
+Route::view('/kontak', 'kontak')->name('kontak');
+
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('posts.show');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
@@ -53,4 +73,20 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', LogoutController::class)
         ->name('logout');
+});
+
+Route::get('profile', [ProfileController::class, 'index']);
+
+Route::middleware('can:creator')->prefix('creator')->group(function () {
+    Route::get('/dashboard', [CreatorDashboardController::class, 'index']);
+});
+
+Route::middleware('can:admin')->prefix('admin')->group(function () {
+    Route::get('/dashboard', [AdminDashboardController::class, 'index']);
+});
+
+Route::middleware('can:create-post')->group(function () {
+    Route::resource('editor.posts', EditorPostController::class);
+
+    Route::resource('categories', CategoryController::class);
 });

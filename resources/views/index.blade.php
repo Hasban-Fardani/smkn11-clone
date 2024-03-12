@@ -188,46 +188,20 @@
     <!-- Berita terkini -->
     <x-section>
         <h2 class="text-3xl font-bold text-center uppercase">Berita TERKINI</h2>
+        <x-button href="{{ route('posts.index') }}" text="Selengkapnya" icon="arrow-up-right" position="right" class="" />
         <div class="overflow-x-scroll pb-8" id="posts">
             <div class="flex w-fit gap-4 mt-8 ">
-                <x-post-card
-                    title="Judul"
-                    description="Deskripsi"
-                    image="https://picsum.photos/1000/1000"
-                    category="Kategori"
-                    url="/" 
-                />
-                <x-post-card
-                    title="Judul"
-                    description="Deskripsi"
-                    image="https://picsum.photos/1000/1000"
-                    category="Kategori"
-                    url="/" 
-                />
-                <x-post-card
-                    title="Judul"
-                    description="Deskripsi"
-                    image="https://picsum.photos/1000/1000"
-                    category="Kategori"
-                    url="/" 
-                />
-                <x-post-card
-                    title="Judul"
-                    description="Deskripsi"
-                    image="https://picsum.photos/1000/1000"
-                    category="Kategori"
-                    url="/" 
-                />
-                <x-post-card
-                    title="Judul"
-                    description="Deskripsi"
-                    image="https://picsum.photos/1000/1000"
-                    category="Kategori"
-                    url="/" 
-                />
+                @foreach ($posts as $post)
+                    <x-post-card
+                        title="{{ $post->title }}"
+                        description="{{ $post->description }}"
+                        image="{{ $post->image }}"
+                        category="{{ $post->category->name }}"
+                        url="{{ route('posts.show', $post->slug) }}"
+                    />
+                @endforeach
             </div>
         </div>
-        <x-button href="/" text="Selengkapnya" icon="arrow-up-right" position="right" class="mt-4" />
     </x-section>
 @endsection
 

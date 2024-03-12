@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\CMS;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePostTagRequest;
 use App\Http\Requests\UpdatePostTagRequest;
 use App\Models\PostTag;
