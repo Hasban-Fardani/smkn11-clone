@@ -1,4 +1,3 @@
-import forms from '@tailwindcss/forms'; 
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
@@ -18,18 +17,14 @@ module.exports = {
         './app/**/*.php',
         './resources/**/*.html',
         './resources/**/*.js',
-        './resources/**/*.jsx',
         './resources/**/*.ts',
-        './resources/**/*.tsx',
         './resources/**/*.php',
-        './resources/**/*.vue',
-        './resources/**/*.twig',
         './vendor/tallstackui/tallstackui/src/**/*.php',
     ],
     plugins: [
         require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),
-        forms
+        require("daisyui"),
     ],
     presets: [
         require('./vendor/tallstackui/tallstackui/tailwind.config.js') 

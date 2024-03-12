@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'index')->name('home');
+Route::view('/profile', 'profile')->name('profile');
+
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)

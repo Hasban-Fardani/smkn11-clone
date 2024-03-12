@@ -122,6 +122,7 @@
 
     <!-- End right nav -->
     <!-- Show Menu lg -->
+    <!-- TODO: urls -->
     <div class="hidden w-full lg:flex lg:items-center bg-blue-500 justify-between md:px-8 lg:px-14">
         <div class="w-full justify-between items-center pt-6 text-lg lg:pt-0 list-reset lg:flex">
             <!-- BERANDA -->
@@ -152,7 +153,7 @@
                     x-transition:leave-start="opacity-100 transform scale-100"
                     x-transition:leave-end="opacity-0 transform scale-90"
                     class="absolute left-1/2 transform -translate-x-1/2 py-1 text-gray-900 bg-white shadow-xl min-w-max border-t-4 border-t-yellow-500">
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">TENTANG</a>
+                    <a href="{{ route('profile') }}" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">TENTANG</a>
                     <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">STRUKTUR
                         ORGANISASI</a>
                     <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">GURU DAN

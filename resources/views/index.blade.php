@@ -7,7 +7,7 @@
     </section>
 
     <!-- Sambutan Kepala sekolah -->
-    <section class="py-12 px-4 md:px-8 lg:px-14 w-screen">
+    <x-section>
         <div class="flex gap-8 w-full flex-wrap lg:flex-nowrap">
             <div class="lg:w-1/2">
                 <h2 class="font-bold text-3xl uppercase">Sambutan Kepala Sekolah</h2>
@@ -26,57 +26,55 @@
             <img src="/images/kepalasekolah.jpg" width="700" height="300"
                 class="lg:w-1/2 h-[300px] object-center object-cover" alt="">
         </div>
-    </section>
+    </x-section>
 
     <!-- Info Sekolah -->
-    <section class="py-12 w-screen">
-        <div class="flex flex-wrap gap-8 w-full justify-evenly bg-blue-600 py-6 px-4 md:px-8 lg:px-14 ">
-            <div class="flex flex-col justify-center text-center gap-4 max-w-40">
-                <div class="justify-center">
-                    <x-icon name="users" class="w-12 h-12 text-white">
-                        <x-slot:right>
-                            <p class="text-3xl font-bold text-white">86</p>
-                        </x-slot:right>
-                    </x-icon>
-                </div>
-                <p class="font-semibold text-white uppercase">GURU DAN TENAGA PENDIDIKAN</p>
+    <x-section-fluid>
+        <div class="flex flex-col justify-center text-center gap-4 max-w-40">
+            <div class="justify-center">
+                <x-icon name="users" class="w-12 h-12 text-white">
+                    <x-slot:right>
+                        <p class="text-3xl font-bold text-white">86</p>
+                    </x-slot:right>
+                </x-icon>
             </div>
-            <div class="flex flex-col justify-center text-center gap-4 max-w-40">
-                <div class="justify-center">
-                    <x-icon name="academic-cap" class="w-12 h-12 text-white">
-                        <x-slot:right>
-                            <p class="text-3xl font-bold text-white">549</p>
-                        </x-slot:right>
-                    </x-icon>
-                </div>
-                <p class="font-semibold text-white uppercase">Siswa kelas x</p>
-            </div>
-            <div class="flex flex-col justify-center text-center gap-4 max-w-40">
-                <div class="justify-center">
-                    <x-icon name="academic-cap" class="w-12 h-12 text-white">
-                        <x-slot:right>
-                            <p class="text-3xl font-bold text-white">505</p>
-                        </x-slot:right>
-                    </x-icon>
-                </div>
-                <p class="font-semibold text-white uppercase">siswa kelas xi</p>
-            </div>
-            <div class="flex flex-col justify-center text-center gap-4 max-w-40">
-                <div class="justify-center">
-                    <x-icon name="academic-cap" class="w-12 h-12 text-white">
-                        <x-slot:right>
-                            <p class="text-3xl font-bold text-white">526</p>
-                        </x-slot:right>
-                    </x-icon>
-                </div>
-                <p class="font-semibold text-white uppercase">siswa kelas xii</p>
-            </div>
+            <p class="font-semibold text-white uppercase">GURU DAN TENAGA PENDIDIKAN</p>
         </div>
-    </section>
+        <div class="flex flex-col justify-center text-center gap-4 max-w-40">
+            <div class="justify-center">
+                <x-icon name="academic-cap" class="w-12 h-12 text-white">
+                    <x-slot:right>
+                        <p class="text-3xl font-bold text-white">549</p>
+                    </x-slot:right>
+                </x-icon>
+            </div>
+            <p class="font-semibold text-white uppercase">Siswa kelas x</p>
+        </div>
+        <div class="flex flex-col justify-center text-center gap-4 max-w-40">
+            <div class="justify-center">
+                <x-icon name="academic-cap" class="w-12 h-12 text-white">
+                    <x-slot:right>
+                        <p class="text-3xl font-bold text-white">505</p>
+                    </x-slot:right>
+                </x-icon>
+            </div>
+            <p class="font-semibold text-white uppercase">siswa kelas xi</p>
+        </div>
+        <div class="flex flex-col justify-center text-center gap-4 max-w-40">
+            <div class="justify-center">
+                <x-icon name="academic-cap" class="w-12 h-12 text-white">
+                    <x-slot:right>
+                        <p class="text-3xl font-bold text-white">526</p>
+                    </x-slot:right>
+                </x-icon>
+            </div>
+            <p class="font-semibold text-white uppercase">siswa kelas xii</p>
+        </div>
+    </x-section-fluid>
 
     <!-- Program Keahlian -->
-    <section class="py-12 px-4 md:px-8 lg:px-14 w-screen">
-        <h2 class="text-2xl font-bold text-center">PROGRAM KEAHLIAN</h2>
+    <x-section>
+        <h2 class="text-3xl font-bold text-center">PROGRAM KEAHLIAN</h2>
         <div class="flex justify-center items-center">
             <div class="grid lg:grid-rows-3 lg:grid-cols-3 mt-8 w-full justify-items-center gap-4">
                 <div class="w-full h-[210px] border rounded-lg">
@@ -185,11 +183,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </x-section>
 
     <!-- Berita terkini -->
-    <section class="py-12 px-4 md:px-8 lg:px-14 w-screen">
-        <h2 class="text-2xl font-bold text-center uppercase">Berita TERKINI</h2>
+    <x-section>
+        <h2 class="text-3xl font-bold text-center uppercase">Berita TERKINI</h2>
         <div class="overflow-x-scroll pb-8" id="posts">
             <div class="flex w-fit gap-4 mt-8 ">
                 <x-post-card
@@ -230,7 +228,7 @@
             </div>
         </div>
         <x-button href="/" text="Selengkapnya" icon="arrow-up-right" position="right" class="mt-4" />
-    </section>
+    </x-section>
 @endsection
 
 @push('styles')
