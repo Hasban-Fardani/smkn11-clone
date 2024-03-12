@@ -192,61 +192,41 @@
         <h2 class="text-2xl font-bold text-center uppercase">Berita TERKINI</h2>
         <div class="overflow-x-scroll pb-8" id="posts">
             <div class="flex w-fit gap-4 mt-8 ">
-                <a class="group w-96 h-96" href="/">
-                    <div class="group relative overflow-hidden rounded-xl ">
-                        <img src="https://picsum.photos/1000/1000" alt=""
-                            class="duration-200 group-hover:scale-105 object-cover">
-                        <div
-                            class="absolute inset-0 flex flex-col justify-end gap-2 bg-gradient-to-b from-transparent from-50% to-sky-900 p-4 rounded-b-xl text-white">
-                            <h3>Judul</h3>
-                            <p>Deskripsi</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="group w-96 h-96" href="/">
-                    <div class="group relative overflow-hidden rounded-xl ">
-                        <img src="https://picsum.photos/1000/1000" alt=""
-                            class="duration-200 group-hover:scale-105 object-cover">
-                        <div
-                            class="absolute inset-0 flex flex-col justify-end gap-2 bg-gradient-to-b from-transparent from-50% to-sky-900 p-4 rounded-b-xl text-white">
-                            <h3>Judul</h3>
-                            <p>Deskripsi</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="group w-96 h-96" href="/">
-                    <div class="group relative overflow-hidden rounded-xl ">
-                        <img src="https://picsum.photos/1000/1000" alt=""
-                            class="duration-200 group-hover:scale-105 object-cover">
-                        <div
-                            class="absolute inset-0 flex flex-col justify-end gap-2 bg-gradient-to-b from-transparent from-50% to-sky-900 p-4 rounded-b-xl text-white">
-                            <h3>Judul</h3>
-                            <p>Deskripsi</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="group w-96 h-96" href="/">
-                    <div class="group relative overflow-hidden rounded-xl ">
-                        <img src="https://picsum.photos/1000/1000" alt=""
-                            class="duration-200 group-hover:scale-105 object-cover">
-                        <div
-                            class="absolute inset-0 flex flex-col justify-end gap-2 bg-gradient-to-b from-transparent from-50% to-sky-900 p-4 rounded-b-xl text-white">
-                            <h3>Judul</h3>
-                            <p>Deskripsi</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="group w-96 h-96" href="/">
-                    <div class="group relative overflow-hidden rounded-xl ">
-                        <img src="https://picsum.photos/1000/1000" alt=""
-                            class="duration-200 group-hover:scale-105 object-cover">
-                        <div
-                            class="absolute inset-0 flex flex-col justify-end gap-2 bg-gradient-to-b from-transparent from-50% to-sky-900 p-4 rounded-b-xl text-white">
-                            <h3>Judul</h3>
-                            <p>Deskripsi</p>
-                        </div>
-                    </div>
-                </a>
+                <x-post-card
+                    title="Judul"
+                    description="Deskripsi"
+                    image="https://picsum.photos/1000/1000"
+                    category="Kategori"
+                    url="/" 
+                />
+                <x-post-card
+                    title="Judul"
+                    description="Deskripsi"
+                    image="https://picsum.photos/1000/1000"
+                    category="Kategori"
+                    url="/" 
+                />
+                <x-post-card
+                    title="Judul"
+                    description="Deskripsi"
+                    image="https://picsum.photos/1000/1000"
+                    category="Kategori"
+                    url="/" 
+                />
+                <x-post-card
+                    title="Judul"
+                    description="Deskripsi"
+                    image="https://picsum.photos/1000/1000"
+                    category="Kategori"
+                    url="/" 
+                />
+                <x-post-card
+                    title="Judul"
+                    description="Deskripsi"
+                    image="https://picsum.photos/1000/1000"
+                    category="Kategori"
+                    url="/" 
+                />
             </div>
         </div>
         <x-button href="/" text="Selengkapnya" icon="arrow-up-right" position="right" class="mt-4" />
