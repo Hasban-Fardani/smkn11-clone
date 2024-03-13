@@ -13,6 +13,7 @@ use App\Http\Controllers\Creator\DashboardController as CreatorDashboardControll
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\CMS\CategoryController;
 use App\Http\Controllers\CMS\PostController as EditorPostController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Post;
@@ -28,13 +29,7 @@ use App\Models\Post;
 |
 */
 
-Route::view(
-    '/',
-    'index',
-    [
-        'posts' => Post::with('category')->latest()->get()->take(6)
-    ]
-)->name('home');
+Route::get('/', [PageController::class, 'index'])->name('home');
 
 Route::view('/tentang', 'about')->name('tentang');
 Route::view('/struktur-organisasi', 'struktur-organisasi')->name('struktur-organisasi');

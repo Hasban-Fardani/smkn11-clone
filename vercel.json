@@ -1,0 +1,65 @@
+{
+    "version": 2,
+    "buildCommand": "npm run build",
+    "builds": [
+        {
+            "src": "/api/index.php",
+            "use": "vercel-php@0.6.1"
+        },
+        {
+            "src": "/public/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(css|js|build)/(.*)",
+            "dest": "/public/$1/$2"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        },
+        {
+            "src": "/build/(.*)",
+            "dest": "/public/build/"
+        },
+        {
+            "src": "/resources/(.*)",
+            "dest": "/public/resources/"
+        },
+        {
+            "src": "/favicon/(.*)",
+            "dest": "/public/favicon/"
+        }
+    ],
+    "env": {
+        "APP_NAME": "Vercel Laravel",
+        "APP_KEY": "base64:Sp+Qtwc2sg5DGupTGVepNh5rGClIWXUF5Y4DaCsoD7E=",
+        "APP_ENV": "production",
+        "APP_DEBUG": "false",
+        "APP_URL": "https://smkn11.vercel.app/",
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        
+        "ASSET_URL": "https://smkn11.vercel.app/",
+        "DB_CONNECTION": "mysql",
+        
+        "MYSQL_ATTR_SSL_CA": "storage/certs/ca.pem",
+
+        "VERCEL_DEMO_MODE": "true",
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+
+        "SESSION_DRIVER": "cookie",
+        "SESSION_LIFETIME": "120",
+        "SESSION_SECURE_COOKIE": "true",
+
+        "VIEW_COMPILED_PATH": "/tmp/views",
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "NODE_PATH": "node"
+    }
+}
