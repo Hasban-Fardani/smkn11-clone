@@ -27,7 +27,7 @@
         @stack('styles')
     </head>
 
-    <body>
+    <body class="min-h-screen">
         @yield('body')
     </body>
 

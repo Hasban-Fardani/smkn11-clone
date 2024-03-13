@@ -5,9 +5,8 @@
                 <h2 class="mb-6 text-lg font-semibold uppercase">Tentang SMKN 11 Bandung</h2>
                 <div class="flex items-center gap-1">
                     <x-logo />
-                    <img src="{{ asset('images/jabar.png') }}" width="50" height="50">
-                    <img src="{{ asset('images/tutwurihandayani.png') }}" width="50" height="50">
-                    {{-- <span class="self-center text-2xl font-semibold whitespace-nowrap uppercase">smkn 11 bandung</span> --}}
+                    <img src="{{ asset('images/jabar.png') }}" width="50" height="50" loading="lazy">
+                    <img src="{{ asset('images/tutwurihandayani.png') }}" width="50" height="50" loading="lazy">
                 </div>
                 <div class="mt-3 max-w-[500px]">
                     <p>SMK Negeri 11 Bandung merupakan salah satu Lembaga Pendidikan Menengah Kejuruan di Kota Bandung,

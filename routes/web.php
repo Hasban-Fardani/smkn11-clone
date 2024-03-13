@@ -92,7 +92,7 @@ Route::middleware('can:admin')->prefix('admin')->group(function () {
 });
 
 Route::middleware('can:create-post')->group(function () {
-    Route::resource('editor.posts', EditorPostController::class);
+    Route::resource('editor-posts', EditorPostController::class);
 
     Route::resource('categories', CategoryController::class);
 });
