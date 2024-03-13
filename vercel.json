@@ -13,7 +13,7 @@
     ],
     "routes": [
         {
-            "src": "/(css|js|build)/(.*)",
+            "src": "/(css|js|build|images|assets)/(.*)",
             "dest": "/public/$1/$2"
         },
         {
@@ -47,8 +47,6 @@
         
         "ASSET_URL": "https://smkn11.vercel.app/",
         "DB_CONNECTION": "mysql",
-        
-        "MYSQL_ATTR_SSL_CA": "storage/certs/ca.pem",
 
         "VERCEL_DEMO_MODE": "true",
         "CACHE_DRIVER": "array",

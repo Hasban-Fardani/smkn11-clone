@@ -19,7 +19,7 @@
         <tallstackui:script />
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
         @livewireStyles
-        @livewireScripts
+        
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -31,5 +31,6 @@
         @yield('body')
     </body>
 
+    @livewireScripts
     @stack('js')
 </html>

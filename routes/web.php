@@ -16,6 +16,7 @@ use App\Http\Controllers\CMS\PostController as EditorPostController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Livewire\PostList;
 use App\Models\Post;
 
 /*
@@ -37,7 +38,7 @@ Route::view('/guru-dan-tenaga-kependidikan', 'guru-dan-tenaga-kependidikan')->na
 Route::view('/sarana-dan-prasarana', 'sarana-dan-prasarana')->name('sarana-dan-prasarana');
 Route::view('/kontak', 'kontak')->name('kontak');
 
-Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('/posts', PostList::class)->name('posts.index');
 Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('posts.show');
 
 Route::middleware('guest')->group(function () {
