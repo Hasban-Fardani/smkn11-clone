@@ -20,7 +20,7 @@ class CommentFactory extends Factory
             'user_id' => $this->faker->numberBetween(1, 10),
             'content' => $this->faker->sentence(),
             'post_id' => $this->faker->numberBetween(1, 10),
-            'parent_id' => $this->faker->numberBetween(0, 10),
+            'parent_id' => $this->faker->boolean(30) ? $this->faker->numberBetween(0, 10) : null,
         ];
     }
 }

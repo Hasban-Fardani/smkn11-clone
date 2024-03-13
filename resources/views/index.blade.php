@@ -4,9 +4,9 @@
     <section class="pb-12 relative">
         <img src="{{asset('images/gedungrps.jpeg')}}" alt="gedung rps" width="1600" height="500" class="object-cover object-center max-h-[500px] opacity-50 brightness-75" data-aos="fade-up">
         <div class="absolute top-1/2 -translate-y-2/3 left-1/2 -translate-x-1/2 w-screen uppercase px-2 py-4 text-white">
-            <div class="backdrop-blur-sm backdrop-brightness-75 text-center">
-                <p class="text-2xl pt-6 px-4">"TEACHING, LOVING AND CARING each other"</p>
-                <h2 class="text-5xl font-bold w-full pb-6 px-4">selamat datang di website smkn 11 bandung</h2>
+            <div class="backdrop-blur-sm backdrop-brightness-75 text-center" data-aos="fade-up">
+                <p class="text-2xl pt-6 px-4" data-aos="fade-up">"TEACHING, LOVING AND CARING each other"</p>
+                <h2 class="text-5xl font-bold w-full pb-6 px-4" data-aos="fade-up">selamat datang di website smkn 11 bandung</h2>
             </div>
         </div>
     </section>
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <img src="/images/kepalasekolah.jpg" width="700" height="300"
-                class="lg:w-1/2 h-[300px] object-center object-cover" data-aos="fade-up" alt="kepala sekolah">
+                class="lg:w-1/2 h-[300px] object-center object-cover" data-aos="fade-up" alt="kepala sekolah" loading="lazy">
         </div>
     </x-section>
 

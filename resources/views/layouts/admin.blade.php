@@ -41,3 +41,16 @@
         </div>
     </div>
 @endsection
+
+@isset($tinymce)
+    @push('js')
+    <script src="https://cdn.tiny.cloud/1/xmbkvq3c55a3out0mcazzve3hsj1oi9dxwrt25my8prdh9qx/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+    tinymce.init({
+        selector: 'textarea#editor',
+        plugins: 'code table lists',
+        toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
+    });
+    </script>
+    @endpush
+@endisset

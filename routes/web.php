@@ -11,13 +11,13 @@ use App\Livewire\Auth\Register;
 use App\Livewire\Auth\Verify;
 
 use App\Livewire\Post\Index as PostIndex;
+use App\Livewire\Post\Show as PostShow;
 
 use App\Http\Controllers\Creator\DashboardController as CreatorDashboardController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\CMS\CategoryController;
 use App\Http\Controllers\CMS\PostController as EditorPostController;
 use App\Http\Controllers\PageController;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -46,7 +46,7 @@ Route::view('/kontak', 'kontak')
 
 Route::get('/posts', PostIndex::class)
     ->name('posts.index');
-Route::get('/posts/{post:slug}', [PostController::class, 'show'])
+Route::get('/posts/{post:slug}', PostShow::class)
     ->name('posts.show');
 
 Route::middleware('guest')->group(function () {
