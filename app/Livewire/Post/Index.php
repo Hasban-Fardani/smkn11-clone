@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Post;
 
 use App\Models\Category;
 use App\Models\Post;
@@ -9,7 +9,7 @@ use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class PostList extends Component
+class Index extends Component
 {   
     use WithPagination;
     public string $search = '';
@@ -38,6 +38,6 @@ class PostList extends Component
                 $query->whereIn('category_id', $this->selectedCategories);
             })
             ->paginate(9);
-        return view('livewire.post-list', compact('posts', 'categories', 'tags', 'categoriesTmp'));
+        return view('livewire.posts.index', compact('posts', 'categories', 'tags', 'categoriesTmp'));
     }
 }

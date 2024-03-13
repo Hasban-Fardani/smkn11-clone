@@ -10,7 +10,12 @@ class PageController extends Controller
     //
     public function index()
     {
-        $posts = Post::with('category')->latest()->paginate(9);
+        $posts = Post::with('category')
+            ->latest()
+            ->limit(5)
+            ->get();
+
         return view('index', compact('posts'));
     }
+
 }

@@ -9,6 +9,9 @@ use App\Livewire\Auth\Passwords\Email;
 use App\Livewire\Auth\Passwords\Reset;
 use App\Livewire\Auth\Register;
 use App\Livewire\Auth\Verify;
+
+use App\Livewire\Post\Index as PostIndex;
+
 use App\Http\Controllers\Creator\DashboardController as CreatorDashboardController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\CMS\CategoryController;
@@ -16,8 +19,6 @@ use App\Http\Controllers\CMS\PostController as EditorPostController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
-use App\Livewire\PostList;
-use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,16 +31,23 @@ use App\Models\Post;
 |
 */
 
-Route::get('/', [PageController::class, 'index'])->name('home');
+Route::get('/', [PageController::class, 'index'])
+    ->name('home');
+Route::view('/tentang', 'about')
+    ->name('tentang');
+Route::view('/struktur-organisasi', 'struktur-organisasi')
+    ->name('struktur-organisasi');
+Route::view('/guru-dan-tenaga-kependidikan', 'guru-dan-tenaga-kependidikan')
+    ->name('guru-dan-tenaga-kependidikan');
+Route::view('/sarana-dan-prasarana', 'sarana-dan-prasarana')
+    ->name('sarana-dan-prasarana');
+Route::view('/kontak', 'kontak')
+    ->name('kontak');
 
-Route::view('/tentang', 'about')->name('tentang');
-Route::view('/struktur-organisasi', 'struktur-organisasi')->name('struktur-organisasi');
-Route::view('/guru-dan-tenaga-kependidikan', 'guru-dan-tenaga-kependidikan')->name('guru-dan-tenaga-kependidikan');
-Route::view('/sarana-dan-prasarana', 'sarana-dan-prasarana')->name('sarana-dan-prasarana');
-Route::view('/kontak', 'kontak')->name('kontak');
-
-Route::get('/posts', PostList::class)->name('posts.index');
-Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('posts.show');
+Route::get('/posts', PostIndex::class)
+    ->name('posts.index');
+Route::get('/posts/{post:slug}', [PostController::class, 'show'])
+    ->name('posts.show');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)

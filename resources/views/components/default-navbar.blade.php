@@ -143,7 +143,7 @@
                 :class="{ 'text-gray-200': open, 'text-white': !open }">
                 <!-- Dropdown Toggle Button -->
                 <button @mouseover="open = true" class="flex items-center p-2 rounded-md">
-                    <span class="mr-4 font-semibold">PROFILE</span>
+                    <span class="mr-4 font-semibold text-sm">PROFILE</span>
                     <span :class="open = !open ? '' : '-rotate-180'"
                         class="transition-transform duration-500 transform">
                         <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -182,7 +182,7 @@
                 :class="{ 'text-gray-200': open, 'text-white': !open }">
                 <!-- Dropdown Toggle Button -->
                 <button @mouseover="open = true" class="flex items-center p-2 rounded-md">
-                    <span class="mr-4 font-semibold">DUNIA INDUSTRI</span>
+                    <span class="mr-4 font-semibold text-sm">DUNIA INDUSTRI</span>
                     <span :class="open = !open ? '' : '-rotate-180'"
                         class="transition-transform duration-500 transform">
                         <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -213,7 +213,7 @@
                 :class="{ 'text-gray-200': open, 'text-white': !open }">
                 <!-- Dropdown Toggle Button -->
                 <button @mouseover="open = true" class="flex items-center p-2 rounded-md">
-                    <span class="mr-4 font-semibold">POJOK SISWA</span>
+                    <span class="mr-4 font-semibold text-sm">POJOK SISWA</span>
                     <span :class="open = !open ? '' : '-rotate-180'"
                         class="transition-transform duration-500 transform">
                         <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -244,7 +244,7 @@
                 :class="{ 'text-gray-200': open, 'text-white': !open }">
                 <!-- Dropdown Toggle Button -->
                 <button @mouseover="open = true" class="flex items-center p-2 rounded-md">
-                    <span class="mr-4 font-semibold">PROGRAM KEAHLIAN</span>
+                    <span class="mr-4 font-semibold text-sm">PROGRAM KEAHLIAN</span>
                     <span :class="open = !open ? '' : '-rotate-180'"
                         class="transition-transform duration-500 transform">
                         <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -285,12 +285,12 @@
             </div>
             <!-- End Dropdown PROGRAM KEAHLIAN -->
 
-            <!-- Dropdown PROGRAM KEAHLIAN -->
+            <!-- Dropdown PROGRAM UNGGULAN -->
             <div x-data="{ open: false }" @mouseleave="open = false" class="relative inline-block"
                 :class="{ 'text-gray-200': open, 'text-white': !open }">
                 <!-- Dropdown Toggle Button -->
                 <button @mouseover="open = true" class="flex items-center p-2 rounded-md">
-                    <span class="mr-4 font-semibold">PROGRAM KEUNGGULAN</span>
+                    <span class="mr-4 font-semibold text-sm">PROGRAM KEUNGGULAN</span>
                     <span :class="open = !open ? '' : '-rotate-180'"
                         class="transition-transform duration-500 transform">
                         <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -317,7 +317,37 @@
                 </div>
                 <!-- End Dropdown Menu -->
             </div>
-            <!-- End Dropdown PROGRAM KEAHLIAN -->
+            <!-- End Dropdown PROGRAM UNGGULAN -->
+
+            <!-- Dropdown BERITA -->
+            <div x-data="{ open: false }" @mouseleave="open = false" class="relative inline-block"
+                :class="{ 'text-gray-200': open, 'text-white': !open }">
+                <!-- Dropdown Toggle Button -->
+                <button @mouseover="open = true" class="flex items-center p-2 rounded-md">
+                    <span class="mr-4 font-semibold text-sm">BERITA</span>
+                    <span :class="open = !open ? '' : '-rotate-180'"
+                        class="transition-transform duration-500 transform">
+                        <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                    </span>
+                </button>
+                <!-- End Dropdown Toggle Button -->
+
+                <!-- Dropdown Menu -->
+                <div x-show="open" x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 transform scale-90"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-90"
+                    class="absolute left-1/2 transform -translate-x-1/2 py-1 text-gray-900 bg-white shadow-xl min-w-max border-t-4 border-t-yellow-500">
+                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">BERITA TERKINI</a>
+                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">LOGIN</a>
+                </div>
+                <!-- End Dropdown Menu -->
+            </div>
+            <!-- End Dropdown Berita -->
 
             <x-button href="{{ route('kontak') }}"
                 class="font-semibold text-white bg-transparent hover:bg-transparent">KONTAK</x-button>
