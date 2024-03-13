@@ -48,10 +48,10 @@
                 <details class="d-dropdown">
                     <summary class="m-1 uppercase">profile</summary>
                     <ul class="p-2 d-menu dropdown-content z-[1] bg-base-100 w-full uppercase">
-                        <li><a>Tentang</a></li>
-                        <li><a>struktur organisasi</a></li>
-                        <li><a>guru dan tenaga kependidikan</a></li>
-                        <li><a>sarana dan prasarana</a></li>
+                        <li><a href="{{ route('tentang') }}">Tentang</a></li>
+                        <li><a href="{{ route('struktur-organisasi') }}">struktur organisasi</a></li>
+                        <li><a href="{{ route('guru-dan-tenaga-kependidikan') }}">guru dan tenaga kependidikan</a></li>
+                        <li><a href="{{ route('sarana-dan-prasarana') }}">sarana dan prasarana</a></li>
                     </ul>
                 </details>
                 <hr>
@@ -89,6 +89,16 @@
                         <li><a>sekolah pusat unggulan</a></li>
                         <li><a>badan layanan usaha daerah</a></li>
                         <li><a>sekolah pencetak wirausaha</a></li>
+                    </ul>
+                </details>
+                <hr>
+                <details class="d-dropdown">
+                    <summary class="m-1 uppercase">Informasi</summary>
+                    <ul class="p-2 d-menu dropdown-content z-[1] bg-base-100 w-full uppercase">
+                        <li><a>Berita Terkini</a></li>
+                        @guest
+                            <li><a>Login</a></li>
+                        @endguest
                     </ul>
                 </details>
                 <hr>
@@ -135,7 +145,7 @@
         <div class="w-full justify-between items-center pt-6 text-lg lg:pt-0 list-reset lg:flex">
             <!-- BERANDA -->
             <x-button href="/"
-                class="font-semibold text-white bg-transparent hover:bg-transparent">BERANDA</x-button>
+                class="font-semibold text-white bg-transparent hover:bg-transparent text-sm">BERANDA</x-button>
             <!-- END BERANDA -->
 
             <!-- Dropdown PROFILE -->
@@ -324,7 +334,7 @@
                 :class="{ 'text-gray-200': open, 'text-white': !open }">
                 <!-- Dropdown Toggle Button -->
                 <button @mouseover="open = true" class="flex items-center p-2 rounded-md">
-                    <span class="mr-4 font-semibold text-sm">BERITA</span>
+                    <span class="mr-4 font-semibold text-sm">INFORMASI</span>
                     <span :class="open = !open ? '' : '-rotate-180'"
                         class="transition-transform duration-500 transform">
                         <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -342,15 +352,26 @@
                     x-transition:leave-start="opacity-100 transform scale-100"
                     x-transition:leave-end="opacity-0 transform scale-90"
                     class="absolute left-1/2 transform -translate-x-1/2 py-1 text-gray-900 bg-white shadow-xl min-w-max border-t-4 border-t-yellow-500">
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">BERITA TERKINI</a>
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">LOGIN</a>
+                    <a href="{{ route('posts.index') }}" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">BERITA TERKINI</a>
+                    @guest
+                        <a href="{{ route('login') }}" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">LOGIN</a>
+                    @endguest
+                    @can('admin')
+                        <a href="{{ route('admin.dashboard') }}" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">DASHBOARD</a>
+                    @endcan
+                    @can('creator')
+                        <a href="{{ route('creator.dashboard') }}" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">DASHBOARD</a>
+                    @endcan
+                    @can('user')
+                        <a href="/" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">DASHBOARD</a>
+                    @endcan
                 </div>
                 <!-- End Dropdown Menu -->
             </div>
             <!-- End Dropdown Berita -->
 
             <x-button href="{{ route('kontak') }}"
-                class="font-semibold text-white bg-transparent hover:bg-transparent">KONTAK</x-button>
+                class="font-semibold text-white bg-transparent hover:bg-transparent text-sm">KONTAK</x-button>
         </div>
     </div>
     <!-- End show Menu lg -->

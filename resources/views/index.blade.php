@@ -1,17 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- Carousel Section -->
-    <section class="pb-12">
-        <x-carousel />
+    <section class="pb-12 relative">
+        <img src="{{asset('images/gedungrps.jpeg')}}" alt="gedung rps" width="1600" height="500" class="object-cover object-center max-h-[500px] opacity-50 brightness-75" data-aos="fade-up">
+        <div class="absolute top-1/2 -translate-y-2/3 left-1/2 -translate-x-1/2 w-screen uppercase px-2 py-4 text-white">
+            <div class="backdrop-blur-sm backdrop-brightness-75 text-center">
+                <p class="text-2xl pt-6 px-4">"TEACHING, LOVING AND CARING each other"</p>
+                <h2 class="text-5xl font-bold w-full pb-6 px-4">selamat datang di website smkn 11 bandung</h2>
+            </div>
+        </div>
     </section>
-
     <!-- Sambutan Kepala sekolah -->
     <x-section>
         <div class="flex gap-8 w-full flex-wrap lg:flex-nowrap">
             <div class="lg:w-1/2">
-                <h2 class="font-bold text-3xl uppercase">Sambutan Kepala Sekolah</h2>
-                <div class="mt-4">
+                <h2 class="font-bold text-3xl uppercase" data-aos="fade-up">Sambutan Kepala Sekolah</h2>
+                <div class="mt-4" data-aos="fade-up">
                     <p class="text-gray-600 text-lg text-justify">
                         Bismillaahirrohmaanirrohiim. Assalaamualaikum Warahmatullahi Wabarakatuh.
                         Alhamdulillahirobbilalamin puji serta syukur kami panjatkan kehadirat Allah SWT, karena atas berkat
@@ -24,13 +28,13 @@
                 </div>
             </div>
             <img src="/images/kepalasekolah.jpg" width="700" height="300"
-                class="lg:w-1/2 h-[300px] object-center object-cover" alt="">
+                class="lg:w-1/2 h-[300px] object-center object-cover" data-aos="fade-up" alt="kepala sekolah">
         </div>
     </x-section>
 
     <!-- Info Sekolah -->
-    <x-section-fluid>
-        <div class="flex flex-col justify-center text-center gap-4 max-w-40">
+    <x-section-fluid data-aos="fade-up">
+        <div class="flex flex-col justify-center text-center gap-4 max-w-40" data-aos="fade-up">
             <div class="justify-center">
                 <x-icon name="users" class="w-12 h-12 text-white">
                     <x-slot:right>
@@ -40,7 +44,7 @@
             </div>
             <p class="font-semibold text-white uppercase">GURU DAN TENAGA PENDIDIKAN</p>
         </div>
-        <div class="flex flex-col justify-center text-center gap-4 max-w-40">
+        <div class="flex flex-col justify-center text-center gap-4 max-w-40" data-aos="fade-up">
             <div class="justify-center">
                 <x-icon name="academic-cap" class="w-12 h-12 text-white">
                     <x-slot:right>
@@ -50,7 +54,7 @@
             </div>
             <p class="font-semibold text-white uppercase">Siswa kelas x</p>
         </div>
-        <div class="flex flex-col justify-center text-center gap-4 max-w-40">
+        <div class="flex flex-col justify-center text-center gap-4 max-w-40" data-aos="fade-up">
             <div class="justify-center">
                 <x-icon name="academic-cap" class="w-12 h-12 text-white">
                     <x-slot:right>
@@ -60,7 +64,7 @@
             </div>
             <p class="font-semibold text-white uppercase">siswa kelas xi</p>
         </div>
-        <div class="flex flex-col justify-center text-center gap-4 max-w-40">
+        <div class="flex flex-col justify-center text-center gap-4 max-w-40" data-aos="fade-up">
             <div class="justify-center">
                 <x-icon name="academic-cap" class="w-12 h-12 text-white">
                     <x-slot:right>
@@ -74,10 +78,10 @@
 
     <!-- Program Keahlian -->
     <x-section>
-        <h2 class="text-3xl font-bold text-center">PROGRAM KEAHLIAN</h2>
+        <h2 class="text-3xl font-bold text-center" data-aos="fade-up">PROGRAM KEAHLIAN</h2>
         <div class="flex justify-center items-center">
             <div class="grid lg:grid-rows-3 lg:grid-cols-3 mt-8 w-full justify-items-center gap-4">
-                <div class="w-full h-[210px] border rounded-lg">
+                <div class="w-full h-[210px] border rounded-lg" data-aos="fade-up">
                     <div class="border-b p-4">
                         <x-icon name="banknotes" class="w-10 h-10">
                             <x-slot:right>
@@ -92,7 +96,7 @@
                     </p>
                 </div>
 
-                <div class="w-full h-[210px] border rounded-lg">
+                <div class="w-full h-[210px] border rounded-lg" data-aos="fade-up">
                     <div class="border-b p-4">
                         <x-icon name="calendar" class="w-10 h-10">
                             <x-slot:right>
@@ -108,7 +112,7 @@
                     </p>
                 </div>
 
-                <div class="w-full h-[210px] border rounded-lg">
+                <div class="w-full h-[210px] border rounded-lg" data-aos="fade-up">
                     <div class="border-b p-4">
                         <x-icon name="building-storefront" class="w-10 h-10">
                             <x-slot:right>
@@ -123,7 +127,7 @@
                     </p>
                 </div>
 
-                <div class="w-full h-[210px] border rounded-lg">
+                <div class="w-full h-[210px] border rounded-lg" data-aos="fade-up">
                     <div class="border-b p-4">
                         <x-icon name="truck" class="w-10 h-10">
                             <x-slot:right>
@@ -138,7 +142,7 @@
                     </p>
                 </div>
 
-                <div class="w-full h-[210px] border rounded-lg">
+                <div class="w-full h-[210px] border rounded-lg" data-aos="fade-up">
                     <div class="border-b p-4">
                         <x-icon name="code-bracket" class="w-10 h-10">
                             <x-slot:right>
@@ -153,7 +157,7 @@
                     </p>
                 </div>
 
-                <div class="w-full h-[210px] border rounded-lg">
+                <div class="w-full h-[210px] border rounded-lg" data-aos="fade-up">
                     <div class="border-b p-4">
                         <x-icon name="banknotes" class="w-10 h-10">
                             <x-slot:right>
@@ -167,7 +171,7 @@
                         Pembelajaran Edit, Video, Photo, UI/UX, Broadcasting, AR/VR dan seputar multimedia
                     </p>
                 </div>
-                <div class="w-full h-[210px] border rounded-lg">
+                <div class="w-full h-[210px] border rounded-lg" data-aos="fade-up">
                     <div class="border-b p-4">
                         <x-icon name="computer-desktop" class="w-10 h-10">
                             <x-slot:right>
@@ -187,18 +191,21 @@
 
     <!-- Berita terkini -->
     <x-section>
-        <h2 class="text-3xl font-bold text-center uppercase">Berita TERKINI</h2>
-        <x-button href="{{ route('posts.index') }}" text="Selengkapnya" icon="arrow-up-right" position="right" class="" />
+        <h2 class="text-3xl font-bold text-center uppercase" data-aos="fade-up">Berita TERKINI</h2>
+        <x-button href="{{ route('posts.index') }}" text="Selengkapnya" icon="arrow-up-right" position="right" data-aos="fade-up"/>
         <div class="overflow-x-scroll pb-8" id="posts">
             <div class="flex w-fit gap-4 mt-8 ">
                 @foreach ($posts as $post)
-                    <x-post-card
-                        title="{{ $post->title }}"
-                        description="{{ $post->description }}"
-                        image="{{ $post->image }}"
-                        category="{{ $post->category->name }}"
-                        url="{{ route('posts.show', $post->slug) }}"
-                    />
+                    <div data-aos="fade-up">
+
+                        <x-post-card
+                            title="{{ $post->title }}"
+                            description="{{ $post->description }}"
+                            image="{{ $post->image }}"
+                            category="{{ $post->category->name }}"
+                            url="{{ route('posts.show', $post->slug) }}"
+                        />
+                    </div>
                 @endforeach
             </div>
         </div>

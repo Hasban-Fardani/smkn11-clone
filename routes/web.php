@@ -82,11 +82,13 @@ Route::middleware('auth')->group(function () {
 Route::get('profile', [ProfileController::class, 'index']);
 
 Route::middleware('can:creator')->prefix('creator')->group(function () {
-    Route::get('/dashboard', [CreatorDashboardController::class, 'index']);
+    Route::get('/dashboard', [CreatorDashboardController::class, 'index'])
+        ->name('creator.dashboard');
 });
 
 Route::middleware('can:admin')->prefix('admin')->group(function () {
-    Route::get('/dashboard', [AdminDashboardController::class, 'index']);
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])
+        ->name('admin.dashboard');
 });
 
 Route::middleware('can:create-post')->group(function () {
