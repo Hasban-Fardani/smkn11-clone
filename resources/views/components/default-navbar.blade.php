@@ -95,9 +95,9 @@
                 <details class="d-dropdown">
                     <summary class="m-1 uppercase">Informasi</summary>
                     <ul class="p-2 d-menu dropdown-content z-[1] bg-base-100 w-full uppercase">
-                        <li><a>Berita Terkini</a></li>
+                        <li><a href="{{ route('posts.index') }}">Berita Terkini</a></li>
                         @guest
-                            <li><a>Login</a></li>
+                            <li><a href="{{ route('login') }}">Login</a></li>
                         @endguest
                     </ul>
                 </details>
@@ -172,15 +172,15 @@
                     x-transition:leave-end="opacity-0 transform scale-90"
                     class="absolute left-1/2 transform -translate-x-1/2 py-1 text-gray-900 bg-white shadow-xl min-w-max border-t-4 border-t-yellow-500">
                     <a href="{{ route('tentang') }}"
-                        class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">TENTANG</a>
+                        class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">TENTANG</a>
                     <a href="{{ route('struktur-organisasi') }}"
-                        class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">STRUKTUR
+                        class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">STRUKTUR
                         ORGANISASI</a>
                     <a href="{{ route('guru-dan-tenaga-kependidikan') }}"
-                        class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">GURU DAN
+                        class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">GURU DAN
                         TENAGA KEPENDIDIKAN</a>
                     <a href="{{ route('sarana-dan-prasarana') }}"
-                        class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100">SARANA DAN
+                        class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100">SARANA DAN
                         PRASARANA</a>
                 </div>
                 <!-- End Dropdown Menu -->
@@ -210,9 +210,9 @@
                     x-transition:leave-start="opacity-100 transform scale-100"
                     x-transition:leave-end="opacity-0 transform scale-90"
                     class="absolute left-1/2 transform -translate-x-1/2 py-1 text-gray-900 bg-white shadow-xl min-w-max border-t-4 border-t-yellow-500">
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">INDUSTRI
+                    <a href="#" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">INDUSTRI
                         KERJASAMA</a>
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100">BURSA KERJA</a>
+                    <a href="#" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100">BURSA KERJA</a>
                 </div>
                 <!-- End Dropdown Menu -->
             </div>
@@ -242,8 +242,8 @@
                     x-transition:leave-end="opacity-0 transform scale-90"
                     class="absolute left-1/2 transform -translate-x-1/2 py-1 text-gray-900 bg-white shadow-xl min-w-max border-t-4 border-t-yellow-500">
                     <a href="#"
-                        class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">EXTRAKULIKULER</a>
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100">PENGHARGAAN</a>
+                        class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">EXTRAKULIKULER</a>
+                    <a href="#" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100">PENGHARGAAN</a>
                 </div>
                 <!-- End Dropdown Menu -->
             </div>
@@ -272,22 +272,22 @@
                     x-transition:leave-start="opacity-100 transform scale-100"
                     x-transition:leave-end="opacity-0 transform scale-90"
                     class="absolute left-1/2 transform -translate-x-1/2 py-1 text-gray-900 bg-white shadow-xl min-w-max border-t-4 border-t-yellow-500">
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">
+                    <a href="#" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">
                         AKUNTANSI DAN KEUANGAN LEMBAGA
                     </a>
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">
+                    <a href="#" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">
                         MANAJEMEN PERKANTORAN DAN LAYANAN BISNIS
                     </a>
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">
+                    <a href="#" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">
                         PEMASARAN
                     </a>
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">
+                    <a href="#" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">
                         PENGEMBANGAN PERANGKAT LUNAK DAN GIM
                     </a>
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">
+                    <a href="#" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">
                         DESAIN KOMUNIKASI VISUAL
                     </a>
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100">
+                    <a href="#" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100">
                         TEKNIK JARINGAN KOMPUTER DAN TELEKOMUNIKASI
                     </a>
                 </div>
@@ -318,11 +318,11 @@
                     x-transition:leave-start="opacity-100 transform scale-100"
                     x-transition:leave-end="opacity-0 transform scale-90"
                     class="absolute left-1/2 transform -translate-x-1/2 py-1 text-gray-900 bg-white shadow-xl min-w-max border-t-4 border-t-yellow-500">
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">SEKOLAH
+                    <a href="#" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">SEKOLAH
                         PUSAT UNGGULAN</a>
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">BADAN
+                    <a href="#" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">BADAN
                         LAYANAN USAHA DAERAH</a>
-                    <a href="#" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100">SEKOLAH PENCETAK
+                    <a href="#" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100">SEKOLAH PENCETAK
                         WIRAUSAHA</a>
                 </div>
                 <!-- End Dropdown Menu -->
@@ -352,18 +352,18 @@
                     x-transition:leave-start="opacity-100 transform scale-100"
                     x-transition:leave-end="opacity-0 transform scale-90"
                     class="absolute left-1/2 transform -translate-x-1/2 py-1 text-gray-900 bg-white shadow-xl min-w-max border-t-4 border-t-yellow-500">
-                    <a href="{{ route('posts.index') }}" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">BERITA TERKINI</a>
+                    <a href="{{ route('posts.index') }}" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">BERITA TERKINI</a>
                     @guest
-                        <a href="{{ route('login') }}" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">LOGIN</a>
+                        <a href="{{ route('login') }}" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">LOGIN</a>
                     @endguest
                     @can('admin')
-                        <a href="{{ route('admin.dashboard') }}" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">DASHBOARD</a>
+                        <a href="{{ route('admin.dashboard') }}" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">DASHBOARD</a>
                     @endcan
                     @can('creator')
-                        <a href="{{ route('creator.dashboard') }}" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">DASHBOARD</a>
+                        <a href="{{ route('creator.dashboard') }}" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">DASHBOARD</a>
                     @endcan
                     @can('user')
-                        <a href="/" class="block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">DASHBOARD</a>
+                        <a href="/" class="text-sm block px-4 py-1 hover:text-gray-900 hover:bg-gray-100 border-b">DASHBOARD</a>
                     @endcan
                 </div>
                 <!-- End Dropdown Menu -->

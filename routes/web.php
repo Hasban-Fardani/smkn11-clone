@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\PageController;
+
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Passwords\Confirm;
 use App\Livewire\Auth\Passwords\Email;
@@ -13,12 +15,10 @@ use App\Livewire\Auth\Verify;
 use App\Livewire\Post\Index as PostIndex;
 use App\Livewire\Post\Show as PostShow;
 
-use App\Http\Controllers\Creator\DashboardController as CreatorDashboardController;
-use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
-use App\Http\Controllers\CMS\CategoryController;
-use App\Http\Controllers\CMS\PostController as EditorPostController;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\ProfileController;
+use App\Livewire\CreatorPost;
+use App\Livewire\Dashboard\Admin;
+use App\Livewire\Dashboard\Creator;
+use App\Livewire\PostCategory;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,20 +79,18 @@ Route::middleware('auth')->group(function () {
         ->name('logout');
 });
 
-Route::get('profile', [ProfileController::class, 'index']);
-
 Route::middleware('can:creator')->prefix('creator')->group(function () {
-    Route::get('/dashboard', [CreatorDashboardController::class, 'index'])
+    Route::get('/dashboard', Creator::class)
         ->name('creator.dashboard');
 });
 
 Route::middleware('can:admin')->prefix('admin')->group(function () {
-    Route::get('/dashboard', [AdminDashboardController::class, 'index'])
+    Route::get('/dashboard', Admin::class)
         ->name('admin.dashboard');
 });
 
 Route::middleware('can:create-post')->group(function () {
-    Route::resource('editor-posts', EditorPostController::class);
+    Route::get('/creator-post', CreatorPost::class)->name('creator-post');
 
-    Route::resource('categories', CategoryController::class);
+    Route::get('/categories', PostCategory::class)->name('post-categories');
 });

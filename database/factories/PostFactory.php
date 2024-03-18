@@ -16,6 +16,8 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
+        $status = $this->faker->randomElement(['published', 'request for publish', 'draft']);
+        $is_accepted = $status === 'published' ? true : false;
         return [
             'image' => $this->faker->imageUrl(),
             'title' => $this->faker->sentence(),
@@ -24,8 +26,8 @@ class PostFactory extends Factory
             'description' => $this->faker->sentence(),
             'user_id' => $this->faker->numberBetween(1, 10),
             'category_id' => $this->faker->numberBetween(1, 10),
-            'status' => $this->faker->randomElement(['draft', 'request for publish', 'draft']),
-            'is_accepted' => $this->faker->boolean(),
+            'status' => $status,
+            'is_accepted' => $is_accepted,
         ];
     }
 }

@@ -31,7 +31,13 @@ class Login extends Component
             return;
         }
 
-        return redirect()->intended(route('home'));
+        $message = redirect()->with('success', 'Login Successfully');
+        if (Auth::user()->role == 'admin') {
+            return $message->intended(route('admin.dashboard'));
+        } else if (Auth::user()->role == 'creator') {
+            return $message->intended(route('creator.dashboard'));
+        }
+        return $message->intended(route('index'));
     }
 
     public function render()

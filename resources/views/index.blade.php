@@ -5,8 +5,8 @@
         <img src="{{asset('images/gedungrps.jpeg')}}" alt="gedung rps" width="1600" height="500" class="object-cover object-center max-h-[500px] opacity-50 brightness-75" data-aos="fade-up">
         <div class="absolute top-1/2 -translate-y-2/3 left-1/2 -translate-x-1/2 w-screen uppercase px-2 py-4 text-white">
             <div class="backdrop-blur-sm backdrop-brightness-75 text-center" data-aos="fade-up">
-                <p class="text-2xl pt-6 px-4" data-aos="fade-up">"TEACHING, LOVING AND CARING each other"</p>
-                <h2 class="text-5xl font-bold w-full pb-6 px-4" data-aos="fade-up">selamat datang di website smkn 11 bandung</h2>
+                <p class="text-lg lg:text-2xl pt-6 px-4" data-aos="fade-up">"TEACHING, LOVING AND CARING each other"</p>
+                <h2 class="text-3xl lg:text-5xl font-bold w-full pb-6 px-4" data-aos="fade-up">selamat datang di website smkn 11 bandung</h2>
             </div>
         </div>
     </section>
@@ -29,6 +29,18 @@
             </div>
             <img src="/images/kepalasekolah.jpg" width="700" height="300"
                 class="lg:w-1/2 h-[300px] object-center object-cover" data-aos="fade-up" alt="kepala sekolah" loading="lazy">
+        </div>
+    </x-section>
+
+    <!-- Kerjasama industri -->
+    <x-section>
+        <h2 class="text-3xl font-bold text-center uppercase" data-aos="fade-up">Kerjasama industri</h2>
+        <div class="flex justify-center gap-4 mt-8" data-aos="fade-up">
+            <img src="{{ asset('images/clients/altra.png')}}" alt="altra" width="210" height="105">
+            <img src="{{ asset('images/clients/djp.png')}}" alt="djp" width="210" height="105">
+            <img src="{{ asset('images/clients/len.png')}}" alt="len" width="210" height="105">
+            <img src="{{ asset('images/clients/millealab.png')}}" alt="millealab" width="210" height="105">
+            <img src="{{ asset('images/clients/yogya.png')}}" alt="yogya" width="210" height="105">
         </div>
     </x-section>
 
